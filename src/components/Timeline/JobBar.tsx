@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { JobData } from './Timeline';
 import { TimelineColors } from './TimelineColors';
@@ -32,17 +32,30 @@ const JobBarRect = styled.div<{colors: string[], isSelected: boolean, isHovered:
 `;
 
 export interface JobBarProps {
+  /** The width (px) between consecutive years in the timeline */
   yearWidth: number;
+  /** The start date of the timeline */
   timelineStart: Date;
+  /** The data of the job represented */
   jobData: JobData;
+  /** The index of the job represented */
   index: number;
+  /** Whether the job is selected */
   isSelected: boolean;
+  /** Whether the job is being hovered */
   isHovered: boolean;
+  /** A handler function for when the job bar is hovered */
   onHover: (id: number) => void;
+  /** A handler function for when the job bar is clicked */
   onClick: (id: number) => void;
+  /** A handler function for when the mouse leaves the job bar */
   onMouseLeave: (id: number) => void
 }
 
+/**
+ * A component for a bar, representing a job held between some time period
+ * in the Timeline.
+ */
 export function JobBar(props: JobBarProps) {
   const now = Date.now();
   const start = parseDateString(props.jobData.start);
@@ -56,7 +69,6 @@ export function JobBar(props: JobBarProps) {
   useEffect(() => {
     let newBarWidth = props.yearWidth * diffInYr(end, start);
 
-    // Add animation for increasing widths only
     if (newBarWidth > barWidth) {
       setIsWidthIncreasing(true);
     }else{
@@ -87,6 +99,7 @@ export function JobBar(props: JobBarProps) {
       <JobBarRect style={{
         borderRadius: (end.getTime() > Date.now()) ? "4px 0 0 4px" : "4px 4px 4px 4px",
         width: barWidth,
+        // Add width animation for increasing widths only
         transition: isWidthIncreasing ? 'width 0.3s ease-out' : 'width 0s'
       }} 
       colors={TimelineColors[props.index]}

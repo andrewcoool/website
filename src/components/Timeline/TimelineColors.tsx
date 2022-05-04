@@ -1,3 +1,9 @@
+/**
+ * The colors used in the timeline.
+ * For each x in TimelineColors:
+ *  x[0] - Unselected (secondary) color
+ *  x[1] - Selected (primary) color
+ */
 export const TimelineColors = [
   ["#A9CF54", "#96CA2D"], // Green
   ["#799AE0", "#4192D9"], // Blue

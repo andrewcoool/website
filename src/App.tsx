@@ -8,7 +8,9 @@ import { Timeline } from './components/Timeline/Timeline';
 function App() {
   return (
     <div className="App">
-      <Timeline></Timeline>
+      <TermText text="timeline">
+        <Timeline></Timeline>
+      </TermText>
     </div>
   );
 }

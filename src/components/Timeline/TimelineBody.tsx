@@ -10,10 +10,16 @@ const TimelineBodyContainer = styled.div`
 `;
 
 export interface TimelineBodyProps extends TimelineControllerProps{
+  /** The width between consecutive years in the timeline */
   yearWidth: number,
+  /** The start date of the timeline */
   timelineStart: Date,
 }
 
+/**
+ * A component representing the main body of the timeline:
+ * the collection of the job bars.
+ */
 export function TimelineBody(props: TimelineBodyProps) {
   const bars = [];
 

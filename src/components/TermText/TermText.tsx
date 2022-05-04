@@ -9,12 +9,24 @@ const Content = styled.div`
   color: white;
 `;
 export interface TermTextProps {
+  /** The terminal text shown */
   text: String;
+  /** The delay (ms) between each character typed */
   typeDelay?: number;
+  /** The delay (ms) between blinks of the terminal cursor */
   blinkDelay?: number;
+  /** The delay (ms) between completing the terminal text and showing the content */
   pauseDelay?: number;
+  /** The element(s) to show on completion of the animation */
   children?: React.ReactNode;
 }
+
+/**
+ * Component for the Terminal Typing animation.
+ * 
+ * The contents of text are displayed (as if a user was typing) and the
+ * children of the component are then shown when the animation completes.
+ */
 export function TermText({ text, typeDelay=50, blinkDelay=450, pauseDelay=10, children }: TermTextProps) {
   const [ time, setTime ] = useState(-1);
   const [ squareIsVisible, setSquareIsVisible ] = useState(true);

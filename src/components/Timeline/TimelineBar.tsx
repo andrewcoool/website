@@ -38,13 +38,20 @@ const BetweenTicksContainer = styled.div`
   flex-grow: 1;
   justify-content: space-between;`;
 
-export interface TimelineProps {
+export interface TimelineBarProps {
+  /** The start of the timeline */
   start: Date;
+  /** The end of the timeline */
   end: Date;
+  /** The width between consecutive years in the timeline */
   yearWidth: number;
 }
 
-export function TimelineBar({start, end, yearWidth}: TimelineProps) {
+/**
+ * A component representing the bottom ruler/bar of the timeline,
+ * containing ticks for each year from start to end.
+ */
+export function TimelineBar({start, end, yearWidth}: TimelineBarProps) {
   const ticks = [];
   const startYear = start.getFullYear();
   const numYears = end.getFullYear() - startYear + 1;

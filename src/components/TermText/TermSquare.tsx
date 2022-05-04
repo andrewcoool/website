@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+/**
+ * Styled Component for Terminal Square Cursor
+ */
 export const TermSquare = styled.div`
   display: inline-block;
   background-color: white;

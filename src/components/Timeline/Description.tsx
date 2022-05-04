@@ -4,8 +4,7 @@ import { JobData, JobsData } from "./Timeline";
 import { TimelineColors } from "./TimelineColors";
 import "./Description.css";
 
-const DescriptionContainer = styled.div`
-`;
+const DescriptionContainer = styled.div``;
 
 const PointsContainer = styled.ul``;
 const PointEntry = styled.li`
@@ -18,11 +17,6 @@ const HeaderText = styled.h2`
   font-size: 20px;
   color: white;
 `;
-
-export interface DescriptionProps {
-  data: JobsData;
-  hoverIndex: number;
-}
 
 function DescriptionCard({jobData, index}: {jobData: JobData, index: number}) {
   const points = [];
@@ -48,6 +42,17 @@ function DescriptionCard({jobData, index}: {jobData: JobData, index: number}) {
   </DescriptionContainer>
 }
 
+export interface DescriptionProps {
+  /** The complete jobs data */
+  data: JobsData;
+  /** The index of the job currently or last hovered over */
+  hoverIndex: number;
+}
+
+/**
+ * A component for displaying in-depth information about an entry in
+ * the job/school history. 
+ */
 export function Description (props: DescriptionProps) {
   return <SwitchTransition>
       <CSSTransition

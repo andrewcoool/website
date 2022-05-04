@@ -1,3 +1,6 @@
+/**
+ * Convert a time period in ms to years.
+ */
 function msToYear(ms: number) {
   return ms / (365 * 24 * 60 * 60 * 1000)
 }
@@ -48,6 +51,10 @@ export function parseDateString(dateStr: String) {
   return new Date(year, month_ - 1, day);
 }
 
+/**
+ * A list of the 3-letter abbreviations of months with indices
+ * that match with the JS Date month indices.
+ */
 export const months = [
   'Jan',
   'Feb',

@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useWindowResize } from "../../hooks/useWindowResize/useWindowResize";
 import { Description } from "./Description";
-import { Selector } from "./Selector";
 import { TimelineBar } from "./TimelineBar";
 import { TimelineBody } from "./TimelineBody";
 import { diffInYr, maxStr, minStr, parseDateString } from "./util";
@@ -36,24 +35,38 @@ const ControllerContainer = styled.div`
   margin-top: 30px;
 `;
 
+/**
+ * An interface representing a single job
+ */
 export interface JobData {
+  /** The start date */
   start: string,
+  /** The end date */
   end: string,
+  /** The position title */
   title: string,
+  /** The name of the employer */
   employer: string,
+  /** A list of the responsibilities done in the job */
   points: string[],
 } 
 
+/** A type representing a complete job history */
+export type JobsData = JobData[];
 export interface TimelineControllerProps {
+  /** The complete job history*/
   data: JobsData,
+  /** The index of the job selected */
   selectedIndex: number,
+  /** The index of the job hovered over */
   hoverIndex: number,
+  /** A handler for when a job is selected */
   selectHandler: (index: number) => void,
+  /** A handler for when a job is hovered over */
   hoverHandler: (index: number) => void,
+  /** A handler for when a mouse leaves a job */
   mouseLeaveHandler: (index: number) => void
 }
-
-export type JobsData = JobData[];
 
 const dummyData = [
   {start: '2020-09-01', end: '2022-05-04', title: 'Computer Science', employer: 'University of Toronto', points:
@@ -72,6 +85,10 @@ const dummyData = [
 const start = parseDateString(minStr(dummyData.map(x => x.start)));
 const end = parseDateString(maxStr(dummyData.map(x => x.end)));
 
+/**
+ * A component that visualizes a complete job history using a timeline
+ * and a description box.
+ */
 export function Timeline() {
   const [ yearWidth, setYearWidth ] = useState(0);
   const [ selectedIndex, setSelectedIndex ] = useState(0);
