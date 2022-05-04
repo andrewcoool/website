@@ -6,7 +6,7 @@ import { TermSquare } from "./TermSquare";
 const Container = styled.div``;
 const Title = styled.h1`
   color: white;
-  font-weight: 900;
+  font-weight: 700;
   font-size:36px;
 `;
 const Prompt = styled.span`
