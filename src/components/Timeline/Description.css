@@ -1,0 +1,17 @@
+.description-item-enter { 
+  opacity: 0;
+}
+
+.description-item-enter-active {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+.description-item-exit {
+  opacity: 1;
+}
+
+.description-item-exit-active {
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { diffInYr } from "./util";
+import { diffInYr, months } from "./util";
 
 const Container = styled.div`
 `;
@@ -20,19 +20,23 @@ const Tick = styled.div`
 
 const YearText = styled.div`
   color: white;
-`;
+  position: absolute;
+  transform: translateX(4px) translateX(-50%) ;`
+  
+;
 
-const TickContainer = styled.div`
-  display: inline-block;
-  text-align: center;
-`;
+const TickContainer = styled.div``;
 
 const TicksContainer = styled.div`
-  padding-left: 30px;
-  padding-right: 30px;
-  display:flex;
-  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
 `;
+
+const BetweenTicksContainer = styled.div`
+  display:flex;
+  flex-grow: 1;
+  justify-content: space-between;`;
 
 export interface TimelineProps {
   start: Date;
@@ -45,7 +49,7 @@ export function TimelineBar({start, end, yearWidth}: TimelineProps) {
   const startYear = start.getFullYear();
   const numYears = end.getFullYear() - startYear + 1;
 
-  for (let i = 0; i < numYears; i++){
+  for (let i = 1; i < numYears; i++){
     const year = startYear + i;
     ticks.push(
       <TickContainer key={i}>
@@ -57,12 +61,21 @@ export function TimelineBar({start, end, yearWidth}: TimelineProps) {
 
   const lastTickDate = new Date(startYear + numYears - 1, 0, 1);
 
+  const startTick = <TickContainer key={0}>
+                      <Tick/>
+                      <YearText>{months[start.getMonth()] + ' ' + start.getFullYear()}</YearText>
+                    </TickContainer>;
+
   return <Container>
     <Bar />
-    <TicksContainer style={{
-      paddingRight: 30 + yearWidth * diffInYr(end, lastTickDate)
-    }}>
-      {ticks}
+    <TicksContainer>
+      {startTick}
+      <BetweenTicksContainer style={{
+        paddingLeft: yearWidth * diffInYr(new Date(startYear, 12, 31), start),
+        paddingRight: yearWidth * diffInYr(end, lastTickDate)
+      }}>
+        {ticks}
+      </BetweenTicksContainer>
     </TicksContainer>
   </Container>
 }

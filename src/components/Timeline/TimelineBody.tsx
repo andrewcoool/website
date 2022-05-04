@@ -1,27 +1,33 @@
 import styled from "styled-components";
 import { JobBar } from "./JobBar";
-import { JobsData } from "./Timeline";
+import { JobsData, TimelineControllerProps } from "./Timeline";
 import { parseDateString } from "./util";
 
-const TimelineBodyContainer = styled.div``;
+const TimelineBodyContainer = styled.div`
+  padding-left: 54px; // padding + half of tick size
+  padding-right: 54px;
+  padding-bottom: 5px;
+`;
 
-export interface TimelineBodyProps {
-  data: JobsData,
-  yearWidth: number
+export interface TimelineBodyProps extends TimelineControllerProps{
+  yearWidth: number,
+  timelineStart: Date,
 }
 
-export function TimelineBody({ data, yearWidth }: TimelineBodyProps) {
+export function TimelineBody(props: TimelineBodyProps) {
   const bars = [];
 
-  for (let i = 0; i < data.length; i++){
+  for (let i = 0; i < props.data.length; i++){
     bars.push(<JobBar 
-      yearWidth={yearWidth}
-      startYear={2020}
-      start={parseDateString(data[i].start)}
-      end={parseDateString(data[i].end)}
-      id={i}
-      onHover={(id) => {}}
-      onClick={(id) => {}}
+      yearWidth={props.yearWidth}
+      timelineStart={props.timelineStart}
+      index={i}
+      jobData={props.data[i]}
+      isSelected={props.selectedIndex === i}
+      isHovered={props.hoverIndex === i}
+      onHover={props.hoverHandler}
+      onClick={props.selectHandler}
+      onMouseLeave={props.mouseLeaveHandler}
       key={i}
     />)
   }

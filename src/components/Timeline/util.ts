@@ -47,3 +47,18 @@ export function parseDateString(dateStr: String) {
 
   return new Date(year, month_ - 1, day);
 }
+
+export const months = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec'
+]
