@@ -1,0 +1,1 @@
+export { TermText } from "./TermText";
