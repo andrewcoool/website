@@ -5,11 +5,11 @@ import ExternalLink from "../../icons/ExternalLink";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const Link = styled.a`
+const Link = styled(motion.a)`
   text-decoration: none;
 `;
 
-const Container = styled(motion.div)`
+const Container = styled.div`
   width: 200px;
   height: 230px;
   background-color: ${Colors.CoalBlue};
@@ -84,30 +84,29 @@ export interface ProjectCardProps {
 export function ProjectCard(props: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  return <Container 
-          onMouseOver={() => {setIsHovered(true);}} 
-          onMouseLeave={() => {setIsHovered(false);}}
+  return <Link href={props.clickUrl} target="_blank" 
           layout
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0 }}
           exit={{ opacity: 0 , scale: 0 }}
-          whileHover={{ scale: 1.04 }}
-          >
-    <Link href={props.clickUrl} target="_blank" >
-      <div>
-        <TopRow>
-          <Title>{props.title}</Title>
-          <ExternalLinkContainer isHovered={isHovered}>
-            <ExternalLink></ExternalLink>
-          </ExternalLinkContainer>
-        </TopRow>
-        <Description>
-          {props.description}
-        </Description>
-      </div>
-      <TechList>
-        {props.technologies.map((x, i) => <TechListItem key={i}>{techToJSX(x)}</TechListItem>)}
-      </TechList>
-      </Link>
-    </Container>;
+          whileHover={{ scale: 1.04 }}>
+            <Container 
+              onMouseOver={() => {setIsHovered(true);}} 
+              onMouseLeave={() => {setIsHovered(false);}}>
+              <div>
+                <TopRow>
+                  <Title>{props.title}</Title>
+                  <ExternalLinkContainer isHovered={isHovered}>
+                    <ExternalLink></ExternalLink>
+                  </ExternalLinkContainer>
+                </TopRow>
+                <Description>
+                  {props.description}
+                </Description>
+              </div>
+              <TechList>
+                {props.technologies.map((x, i) => <TechListItem key={i}>{techToJSX(x)}</TechListItem>)}
+              </TechList>
+            </Container>
+          </Link>;
 }
