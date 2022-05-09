@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Intro } from './components/Intro';
+import { Contact } from './components/Contact';
 
 function App() {
   return (
     <div className="App">
-      <Intro></Intro>
+      <Contact github={{name: "@andrewcoool", url: "https://github.com/andrewcoool"}}
+      email="andrewq.qiu@mail.utoronto.ca" />
     </div>
   );
 }
