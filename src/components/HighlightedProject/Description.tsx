@@ -43,7 +43,7 @@ const TechList = styled.ul`
   margin-top: 15px;
 `;
 
-const TechListEntry = styled.li`
+const TechListItem= styled.li`
   float: left;
   padding-right: 20px;
 `;
@@ -63,7 +63,7 @@ export function Description(props: DescriptionProps) {
         <DescriptionText>{props.description}</DescriptionText>
       </TitleAndDescription>
       <TechList>
-        {props.technologies.map(x => <TechListEntry>{x}</TechListEntry>)}
+        {props.technologies.map(x => <TechListItem>{x}</TechListItem>)}
       </TechList>
     </SubContainer>
   </Container>

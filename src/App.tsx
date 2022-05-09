@@ -1,17 +1,45 @@
 import React from 'react';
 import './App.css';
-import { HighlightedProject } from './components/HighlightedProject';
+import { AllProjects } from './components/AllProjects';
+import { ProjectCardProps } from './components/AllProjects/ProjectCard';
+
+const projects = [
+  {
+    title: "Rise Up Bot",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies mauris ex, quis vestibulum mi eleifend ac. Sed quis diam varius, tempus eros.",
+    clickUrl: "http://google.ca",
+    technologies: ["Python"]
+  },
+  {
+    title: "Collaborate Code",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies mauris ex, quis vestibulum mi eleifend ac. Sed quis diam varius, tempus eros.",
+    clickUrl: "http://google.ca",
+    technologies: ["Python", "React", "Typescript"]
+  },
+  {
+    title: "Spotify Song Analytics",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies mauris ex, quis vestibulum mi eleifend ac. Sed quis diam varius, tempus eros.",
+    clickUrl: "http://google.ca",
+    technologies: ["Python", "PyQt5"]
+  },
+  {
+    title: "Wildfire Visualizer",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies mauris ex, quis vestibulum mi eleifend ac. Sed quis diam varius, tempus eros.",
+    clickUrl: "http://google.ca",
+    technologies: ["Python", "Numpy", "SQLite"]
+  },
+  {
+    title: "Cupet",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies mauris ex, quis vestibulum mi eleifend ac. Sed quis diam varius, tempus eros.",
+    clickUrl: "http://google.ca",
+    technologies: ["Java", "Android", "Spring"]
+  },
+] as ProjectCardProps[];
 
 function App() {
   return (
     <div className="App">
-      <HighlightedProject
-        title="Collaborate Code"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies mauris ex, quis vestibulum mi eleifend ac. Sed quis diam varius, tempus eros et, suscipit enim. "
-        technologies={["Python", "Flask", "HTML", "CSS", "JS"]}
-        clickUrl="http://google.ca"
-        imgUrl="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg"
-      ></HighlightedProject>
+      <AllProjects projects={projects}></AllProjects>
     </div>
   );
 }

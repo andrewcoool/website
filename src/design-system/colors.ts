@@ -1,7 +1,9 @@
 export const Colors = {
   SkyBlue: "#37AACE",
   Wisteria: "#C490D1",
-  DarkWisteria: "74577B",
+  DarkWisteria: "#74577B",
+  DarkerWisteria: "#5F4A64",
+  MediumWisteria: "#8e6b96",
   Cobalt: "#344765",
   DarkCobalt: "#344765",
   CherryPink: "#FFC2F0",
