@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const Button = styled.button<{isOpen: boolean}>`
-  width: 120px;
+  width: 110px;
   height: 40px;
 
   margin: -65px 0 25px auto;
@@ -20,18 +20,29 @@ const Button = styled.button<{isOpen: boolean}>`
   align-items: center;
   justify-content: center;
 
-  border: 0;
-  background-color: ${Colors.DarkWisteria};
-  color: white;
+  border: 2px solid ${Colors.VeryLightCobalt};
+  background: none;
+  color: ${Colors.VeryLightCobalt};
 
   font-size: 20px;
-  font-weight: bold;
   
   transition: background-color linear 0.1s;
 
+  ${props => props.isOpen && "animation: filter-btn-click 1s forwards;"}
+
+  @keyframes filter-btn-click {
+    5% {
+      background-color: ${Colors.DarkCobalt};
+    }
+
+    100% {
+      background: none;
+    }
+  }
+
   &:hover {
     cursor: pointer;
-    background-color: ${Colors.DarkerWisteria};
+    background-color: ${Colors.DarkCobalt};
   }
 
   & > svg {
@@ -41,6 +52,10 @@ const Button = styled.button<{isOpen: boolean}>`
     transition: transform 0.3s ease-out;
 
     transform: ${props => props.isOpen ? "rotate(0deg)" : "rotate(-180deg)"};
+  }
+
+  & path {
+    fill: ${Colors.VeryLightCobalt};
   }
 `;
 
@@ -106,7 +121,9 @@ export function FilterButton({filterData, toggle}: FilterButtonProps) {
   }
 
   return <Container>
-    <Button isOpen={isOpen} onClick={() => {setIsOpen(!isOpen);}}>Filter
+    <Button isOpen={isOpen} onClick={() => {
+      setIsOpen(!isOpen);
+      }}>Filter
       <Triangle></Triangle>
     </Button>
     <PopOutContainer visible={isOpen}>
