@@ -12,6 +12,6 @@ export const Colors = {
   DarkGrey: "#A1A1A1",
   LightGrey: "#CFCFCF",
   White: "#FFFFFF",
-  CoalBlue: "#313949",
-  VeryDarkBlue: "#1E2028" 
+  CoalBlue: "#2E3144",
+  VeryDarkBlue: "#141316" 
 }
