@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components"
 import { Colors } from "../../design-system/colors";
 import Arc from "../../icons/Arc";
@@ -31,6 +30,10 @@ const SubText = styled.h2`
   margin: 0;
   position: absolute;
   right: 0;
+
+  @media (max-width: 775px) {
+    position: relative;
+  }
 `;
 
 const ArcContainer = styled.div`
@@ -53,6 +56,10 @@ const ArcContainer = styled.div`
     to {
       stroke-dashoffset: 0;
     }
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
   }
 `;
 
