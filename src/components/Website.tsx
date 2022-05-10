@@ -12,6 +12,10 @@ import { aboutText, allProjects, contact, highlightedProject1, highlightedProjec
 const Container = styled.div`
   max-width: 1060px;
   margin: auto;
+
+  @media (max-width: 1200px){
+    margin: 0 60px;
+  }
 `;
 
 export function Website () {

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Colors } from "../../design-system/colors";
+import { techToJSX } from "../technologies";
 
 const Container = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ const Container = styled.div`
 
 const SubContainer = styled.div``;
 
-const HighlightedText = styled.div`
+export const HighlightedText = styled.div`
   color: ${Colors.CherryPink};
   font-size: 16px;
   font-weight: bold;
@@ -29,7 +30,6 @@ const DescriptionText = styled.div`
 `;
 
 const TitleAndDescription = styled.div`
-  height: 104px;
   background-color: ${Colors.CoalBlue};
   padding: 33px;
 `;
@@ -46,24 +46,36 @@ const TechList = styled.ul`
 const TechListItem= styled.li`
   float: left;
   padding-right: 20px;
+
+  & > div {
+    display: flex;
+    line-height: 26px;
+  }
+
+  & > div > svg {
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+  }
 `;
 
 interface DescriptionProps {
   title: string,
   description: string,
   technologies: string[]
+  showHighlightedText?: boolean;
 }
 
 export function Description(props: DescriptionProps) {
   return <Container>
     <SubContainer>
-      <HighlightedText>Highlighted Project</HighlightedText>
+      {props.showHighlightedText && <HighlightedText>Highlighted Project</HighlightedText>}
       <TitleAndDescription>
         <TitleText>{props.title}</TitleText>
         <DescriptionText>{props.description}</DescriptionText>
       </TitleAndDescription>
       <TechList>
-        {props.technologies.map(x => <TechListItem>{x}</TechListItem>)}
+        {props.technologies.map(x => <TechListItem>{techToJSX(x)}</TechListItem>)}
       </TechList>
     </SubContainer>
   </Container>

@@ -11,7 +11,7 @@ const technologies = {
   Python: PythonLogo,
   Java: JavaLogo,
   JS: JSLogo,
-  TS: TSLogo,
+  TypeScript: TSLogo,
   Android: AndroidLogo
 } as Record<string, React.FC>;
 

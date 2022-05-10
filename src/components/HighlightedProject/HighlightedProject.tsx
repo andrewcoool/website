@@ -1,10 +1,15 @@
 import styled from "styled-components";
-import { Description } from "./Description";
-
+import { ScreenSizes } from "../../design-system/screenSizes";
+import { useWindowWidth } from "../../hooks/useWindowWidth/useWindowWidth";
+import { Description, HighlightedText } from "./Description";
 
 const Container = styled.div`
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+
+  @media (max-width: ${ScreenSizes.UnderDesktop}px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const ImgLink = styled.a`
@@ -12,8 +17,8 @@ const ImgLink = styled.a`
   height: 100%;
 `;
 
-const ImgContainer = styled.div<{imgUrl: string}>`
-  background: url(${props => props.imgUrl});
+const ImgContainer = styled.div<{ imgUrl: string }>`
+  background: url(${(props) => props.imgUrl});
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px;
@@ -29,37 +34,46 @@ const ImgContainer = styled.div<{imgUrl: string}>`
   }
 `;
 
-export interface HighlightedProjectProps{
-  title: string,
-  description: string,
-  technologies: string[],
-  clickUrl: string,
-  imgUrl: string,
-  imgOnLeft?: boolean
+export interface HighlightedProjectProps {
+  title: string;
+  description: string;
+  technologies: string[];
+  clickUrl: string;
+  imgUrl: string;
+  imgOnLeft?: boolean;
 }
 
-export function HighlightedProject(props: HighlightedProjectProps) {
-  if (props.imgOnLeft){
-    return <Container>
-            <ImgLink href={props.clickUrl} target="_blank">
-              <ImgContainer
-                imgUrl={props.imgUrl}
-              />
-            </ImgLink>
-            <Description title={props.title}
-            description={props.description}
-              technologies={props.technologies}/>
-          </Container>
-  }else{
-    return <Container>
-            <Description title={props.title}
-            description={props.description}
-              technologies={props.technologies}/>
-            <ImgLink href={props.clickUrl} target="_blank">
-              <ImgContainer
-                imgUrl={props.imgUrl}
-              />
-            </ImgLink>
-          </Container>
+export function HighlightedProject(props: HighlightedProjectProps) {  
+  const windowWidth = useWindowWidth();
+
+  const img = (
+    <ImgLink href={props.clickUrl} target="_blank">
+      <ImgContainer imgUrl={props.imgUrl} />
+    </ImgLink>
+  );
+
+  const description = (
+    <Description
+      title={props.title}
+      description={props.description}
+      technologies={props.technologies}
+      showHighlightedText={windowWidth > ScreenSizes.UnderDesktop}
+    />
+  );
+
+  if (windowWidth <= ScreenSizes.UnderDesktop) {
+    return (
+      <Container>
+        <HighlightedText>Highlighted Project</HighlightedText>
+        {img}
+        {description}
+      </Container>
+    );
+  } else {
+    if (props.imgOnLeft) {
+      return <Container>{img}{description}</Container>;
+    } else {
+      return <Container>{description}{img}</Container>;
+    }
   }
 }
