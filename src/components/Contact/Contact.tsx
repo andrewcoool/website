@@ -19,8 +19,8 @@ const Link = styled.a`
 
 const IconContainer = styled.div`
   & > svg {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
   margin-right: 12px;
