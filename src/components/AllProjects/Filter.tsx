@@ -14,8 +14,6 @@ const Button = styled.button<{isOpen: boolean}>`
   width: 110px;
   height: 40px;
 
-  margin: -65px 0 25px auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +58,7 @@ const Button = styled.button<{isOpen: boolean}>`
 `;
 
 const PopUp = styled.div`
-  margin-top: -10px;
+  margin-top: 15px;
   width: 200px;
   background-color: ${Colors.DarkCobalt};
   color: ${Colors.White};

@@ -16,6 +16,10 @@ const Container = styled.div`
   @media (max-width: 1200px){
     margin: 0 60px;
   }
+
+  @media (max-width: 400px){
+    margin: 0 30px;
+  }
 `;
 
 export function Website () {
