@@ -17,22 +17,20 @@ const Container = styled.div`
 `;
 
 const TimelineContainer = styled.div`
-  flex-grow: 1;
-  min-width: 0;
+  min-width: 60%;
+  z-index: 1;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin: 50px 0 0 0;
+  }
 `;
 
 const ControllerContainer = styled.div`
-  padding-left: 40px;
-  min-height: 350px;
-  max-width: 500px;
-
   @media (max-width: 1200px) {
-    margin: auto;
-    margin-top: 30px;
-    max-width: 1000px;
+    margin-top: 60px;
+    width: 100%;
   }
-
-  margin-top: 30px;
 `;
 
 /**
@@ -49,6 +47,8 @@ export interface JobData {
   employer: string,
   /** A list of the responsibilities done in the job */
   points: string[],
+  /** Whether or not the experience is an education */
+  isEducation?: boolean;
 } 
 
 /** A type representing a complete job history */
@@ -70,7 +70,7 @@ export interface TimelineControllerProps {
 
 const dummyData = [
   {start: '2020-09-01', end: '2022-05-04', title: 'Computer Science', employer: 'University of Toronto', points:
-   ['Worked in teams to test, document, and track bugs in the FIFA 21 video game']},
+   ['Worked in teams to test, document, and track bugs in the FIFA 21 video game'], isEducation: true},
   {start: '2021-07-01', end: '2021-09-01', title: 'Software Intern', employer: 'Game of Apps', points:
    ['Created a registration system using React, allowing students to register for the Game of Apps program online; eliminated admin overhead by handling student data programmatically',
   'Integrated online payments with Braintree APIusing React, Node.js Express, and Heroku',

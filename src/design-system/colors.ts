@@ -5,6 +5,8 @@ export const Colors = {
   DarkerWisteria: "#5F4A64",
   MediumWisteria: "#8e6b96",
   Cobalt: "#344765",
+  VeryLightCobalt: "#719ad9",
+  LightCobalt: "#4a6691",
   DarkCobalt: "#344765",
   CherryPink: "#FFC2F0",
   DarkGrey: "#A1A1A1",

@@ -5,7 +5,11 @@ import useOnScreen from "../../../hooks/useOnScreen/useOnScreen";
 import { TermText } from "../TermText";
 
 const Container = styled.div`
-  margin-bottom: 80px;
+  margin-bottom: 60px;
+
+  @media (max-width: 1200px) {
+    margin-bottom: 40px;
+  }
 `;
 
 export interface TermHeadedContainerProps {

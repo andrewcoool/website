@@ -1,14 +1,43 @@
+import { Colors } from "../../design-system/colors";
+
+export interface TimelineColorGroup {
+  selected: string,
+  unselected: string
+}
+
+/**
+ * Return the timeline color group corresponding to the type of experience
+ */
+export function getTimelineColorGroup(isEducation?: boolean) {
+  if (isEducation) {
+    return TimelineColors.education;
+  }else{
+    return TimelineColors.job;
+  }
+}
+
+/**
+ * Return the color associated with the state of a timeline
+ * bar and its experience type.
+ */
+export function getTimelineColor(isEducation?: boolean, isSelected?: boolean){
+  if (isSelected){
+    return getTimelineColorGroup(isEducation).selected;
+  }else{
+    return getTimelineColorGroup(isEducation).unselected;
+  }
+}
+
 /**
  * The colors used in the timeline.
- * For each x in TimelineColors:
- *  x[0] - Unselected (secondary) color
- *  x[1] - Selected (primary) color
  */
-export const TimelineColors = [
-  ["#A9CF54", "#96CA2D"], // Green
-  ["#799AE0", "#4192D9"], // Blue
-  ["#ef5350", "#e53935"], // Red
-  ["#FF7729", "#FF6D1F"], // Orange
-  ["#9575CD", "#7B52AB"], // Purple
-  ["#FFEE58", "#FFDE20"], // Yellow
-]
+export const TimelineColors = {
+  job: {
+    selected: Colors.Wisteria,
+    unselected: Colors.DarkWisteria
+  } as TimelineColorGroup,
+  education: {
+    selected: Colors.VeryLightCobalt,
+    unselected: Colors.LightCobalt
+  } as TimelineColorGroup
+}

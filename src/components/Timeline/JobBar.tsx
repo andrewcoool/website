@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { JobData } from './Timeline';
-import { TimelineColors } from './TimelineColors';
+import { TimelineColorGroup, getTimelineColor, getTimelineColorGroup } from './TimelineColors';
 import { diffInYr, parseDateString } from './util';
 
 const JobBarHeading = styled.div`
   color: white;
   font-size: 16px;
 
-  transition: color 0.1s linear;
+  transition: color 0.5s linear;
   margin-bottom: 0px;
 `;
 
-const JobBarContainer = styled.div<{colors: string[]}>`
+const JobBarContainer = styled.div`
   width: fit-content;
 
   &:hover {
@@ -20,15 +20,15 @@ const JobBarContainer = styled.div<{colors: string[]}>`
   }
 `;
 
-const JobBarRect = styled.div<{colors: string[], isSelected: boolean, isHovered: boolean}>`
+const JobBarRect = styled.div<{colors: TimelineColorGroup, isSelected: boolean, isHovered: boolean}>`
   height: 20px;
   margin-top: 3px;
   margin-bottom: 8px;
   max-width: 100%;
-  background-color: ${props => props.colors[0]};
+  background-color: ${props => props.colors.unselected};
 
-  ${props => (props.isSelected || props.isHovered) && 'background-color: ' + props.colors[1] + ';'}
-  transition: background-color 0.1s linear;
+  ${props => (props.isSelected || props.isHovered) && 'background-color: ' + props.colors.selected + ';'}
+  transition: background-color 0.2s linear;
 `;
 
 export interface JobBarProps {
@@ -85,24 +85,22 @@ export function JobBar(props: JobBarProps) {
     onMouseOver={() => {props.onHover(props.index)}}
     onClick={() => {props.onClick(props.index)}}
     onMouseLeave={() => {props.onMouseLeave(props.index)}}
-    colors={TimelineColors[props.index]}
     >
       <JobBarHeading style={{
         color: (props.isSelected || props.isHovered) ? "white" : "#bdbdbd"
       }}>
         {props.jobData.title} @ {' '}
         <span style={{
-          color: (props.isSelected || props.isHovered) ?
-          TimelineColors[props.index][1] : TimelineColors[props.index][0] 
+          color: getTimelineColor(props.jobData.isEducation, props.isSelected || props.isHovered)
         }}>{props.jobData.employer}</span>
       </JobBarHeading>
       <JobBarRect style={{
         borderRadius: (end.getTime() > Date.now()) ? "4px 0 0 4px" : "4px 4px 4px 4px",
         width: barWidth,
         // Add width animation for increasing widths only
-        transition: isWidthIncreasing ? 'width 1s ease-out' : 'width 0s'
+        transition: isWidthIncreasing ? 'width 1s ease-out, background-color 0.2s linear' : 'width 0s, background-color 0.2s linear'
       }} 
-      colors={TimelineColors[props.index]}
+      colors={getTimelineColorGroup(props.jobData.isEducation)}
       isSelected={props.isSelected}
       isHovered={props.isHovered}
       />
