@@ -1,12 +1,18 @@
 import ReactLogo from "../icons/React";
 import PythonLogo from "../icons/Python";
 import JavaLogo from "../icons/Java";
+import JSLogo from "../icons/JS";
+import TSLogo from "../icons/TS";
+import AndroidLogo from "../icons/Android";
 import React from "react";
 
 const technologies = {
   React: ReactLogo,
   Python: PythonLogo,
-  Java: JavaLogo
+  Java: JavaLogo,
+  JS: JSLogo,
+  TS: TSLogo,
+  Android: AndroidLogo
 } as Record<string, React.FC>;
 
 /**
