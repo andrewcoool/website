@@ -4,6 +4,7 @@ import { techToJSX } from "../technologies";
 import ExternalLink from "../../icons/ExternalLink";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ScreenSizes } from "../../design-system/screenSizes";
 
 const Link = styled(motion.a)`
   text-decoration: none;
@@ -45,6 +46,10 @@ const ExternalLinkContainer = styled.div<{isHovered: boolean}>`
   }
 
   ${props => props.isHovered && "opacity: 1;"}
+
+  @media (max-width: ${ScreenSizes.UnderDesktop}px){
+    opacity: 1;
+  }
 `;
 
 const TechList = styled.ul`
