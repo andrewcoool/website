@@ -45,7 +45,8 @@ const ArcContainer = styled.div`
   & circle {
     stroke-dasharray: 1000;
     stroke-dashoffset: 820;
-    animation: arcDraw 2.5s linear forwards;
+    animation: arcDraw 3s linear forwards;
+    animation-delay: 0.05s;
   }
 
   @keyframes arcDraw {

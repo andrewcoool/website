@@ -28,7 +28,7 @@ const IconContainer = styled.div`
 
 const Text = styled.div`
   color: ${Colors.White};
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 `;
 

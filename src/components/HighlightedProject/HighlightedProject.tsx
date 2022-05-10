@@ -3,8 +3,8 @@ import { Description } from "./Description";
 
 
 const Container = styled.div`
-  width: 950px;
   display: flex;
+  margin-bottom: 40px;
 `;
 
 const ImgLink = styled.a`
@@ -29,7 +29,7 @@ const ImgContainer = styled.div<{imgUrl: string}>`
   }
 `;
 
-export interface ProjectShowcaseProps{
+export interface HighlightedProjectProps{
   title: string,
   description: string,
   technologies: string[],
@@ -38,7 +38,7 @@ export interface ProjectShowcaseProps{
   imgOnLeft?: boolean
 }
 
-export function HighlightedProject(props: ProjectShowcaseProps) {
+export function HighlightedProject(props: HighlightedProjectProps) {
   if (props.imgOnLeft){
     return <Container>
             <ImgLink href={props.clickUrl} target="_blank">

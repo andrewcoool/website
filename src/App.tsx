@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
-import { Contact } from './components/Contact';
+import { TermCenterContainer } from './components/TermText/TermContainers';
+import { Website } from './components/Website';
+import { AllProjects } from './components/AllProjects';
+import { allProjects } from './components/websiteData';
+
 
 function App() {
   return (
     <div className="App">
-      <Contact github={{name: "@andrewcoool", url: "https://github.com/andrewcoool"}}
-      email="andrewq.qiu@mail.utoronto.ca" />
+      <TermCenterContainer text="website">
+        <Website />
+      </TermCenterContainer>
+      {/* <AllProjects projects={allProjects}></AllProjects> */}
     </div>
   );
 }

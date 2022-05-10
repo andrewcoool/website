@@ -100,7 +100,7 @@ export function JobBar(props: JobBarProps) {
         borderRadius: (end.getTime() > Date.now()) ? "4px 0 0 4px" : "4px 4px 4px 4px",
         width: barWidth,
         // Add width animation for increasing widths only
-        transition: isWidthIncreasing ? 'width 0.3s ease-out' : 'width 0s'
+        transition: isWidthIncreasing ? 'width 1s ease-out' : 'width 0s'
       }} 
       colors={TimelineColors[props.index]}
       isSelected={props.isSelected}
