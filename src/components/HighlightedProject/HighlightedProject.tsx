@@ -45,6 +45,7 @@ export interface HighlightedProjectProps {
 
 export function HighlightedProject(props: HighlightedProjectProps) {  
   const windowWidth = useWindowWidth();
+  const smallerThanDesktop = windowWidth <= ScreenSizes.UnderDesktop;
 
   const img = (
     <ImgLink href={props.clickUrl} target="_blank">
@@ -57,11 +58,11 @@ export function HighlightedProject(props: HighlightedProjectProps) {
       title={props.title}
       description={props.description}
       technologies={props.technologies}
-      showHighlightedText={windowWidth > ScreenSizes.UnderDesktop}
+      showHighlightedText={!smallerThanDesktop}
     />
   );
 
-  if (windowWidth <= ScreenSizes.UnderDesktop) {
+  if (smallerThanDesktop) {
     return (
       <Container>
         <HighlightedText>Highlighted Project</HighlightedText>
