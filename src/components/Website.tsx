@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Colors } from "../design-system/colors";
+import { MountInView } from "../design-system/util/MountInView";
 import { About } from "./About";
 import { AllProjects } from "./AllProjects";
 import { Contact } from "./Contact";
@@ -38,7 +39,7 @@ export function Website () {
     <TermHeadedContainer text="projects" startOnScroll id="projects">
       <HighlightedProject {...highlightedProject1} />
       <HighlightedProject {...highlightedProject2} imgOnLeft/>
-      <AllProjects projects={allProjects}/>
+      <MountInView><AllProjects projects={allProjects}/></MountInView>
     </TermHeadedContainer>
     <TermHeadedContainer text="contact" startOnScroll id="contact">
       <Contact {...contact}/>

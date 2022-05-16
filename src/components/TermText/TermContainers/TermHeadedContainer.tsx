@@ -39,7 +39,7 @@ export interface TermHeadedContainerProps {
 export function TermHeadedContainer({ children, startOnScroll, ...props }: TermHeadedContainerProps) {
   const [ isShown, setIsShown ] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const isOnScreen = useOnScreen(ref, "0");
+  const isOnScreen = useOnScreen(ref);
 
   function onTermTextDone() {
     setIsShown(true);
