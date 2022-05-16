@@ -5,6 +5,8 @@ import useOnScreen from "../../../hooks/useOnScreen/useOnScreen";
 import { TermText } from "../TermText";
 
 const Container = styled.div`
+  padding-top: 50px;
+  margin-top: -50px;
   margin-bottom: 60px;
 
   @media (max-width: 1200px) {
@@ -25,6 +27,7 @@ export interface TermHeadedContainerProps {
   children?: React.ReactNode;
   /** Whether the animation should start immediately or when the element is scrolled to */
   startOnScroll?: boolean;
+  id?: string;
 }
 
 /**
@@ -42,7 +45,7 @@ export function TermHeadedContainer({ children, startOnScroll, ...props }: TermH
     setIsShown(true);
   }
 
-  return <Container ref={ref}>
+  return <Container ref={ref} id={props.id}>
     <TermText {...props} onDone={onTermTextDone} 
     startTrigger={!startOnScroll || isOnScreen}
     startDelay={70}

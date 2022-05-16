@@ -5,6 +5,7 @@ import { AllProjects } from "./AllProjects";
 import { Contact } from "./Contact";
 import { HighlightedProject } from "./HighlightedProject";
 import { Intro } from "./Intro";
+import { Nav } from "./Nav/Nav";
 import { TermHeadedContainer } from "./TermText/TermContainers";
 import { Timeline } from "./Timeline";
 import { aboutText, allProjects, contact, highlightedProject1, highlightedProject2 } from "./websiteData";
@@ -24,21 +25,22 @@ const Container = styled.div`
 
 export function Website () {
   return <Container>
+    <Nav />
     <Intro />
-    <TermHeadedContainer text="about" startOnScroll>
+    <TermHeadedContainer text="about" startOnScroll id="about">
       <About>
         {aboutText}
       </About>
     </TermHeadedContainer>
-    <TermHeadedContainer text="experience" startOnScroll>
+    <TermHeadedContainer text="experience" startOnScroll id="experience">
       <Timeline />
     </TermHeadedContainer>
-    <TermHeadedContainer text="projects" startOnScroll>
+    <TermHeadedContainer text="projects" startOnScroll id="projects">
       <HighlightedProject {...highlightedProject1} />
       <HighlightedProject {...highlightedProject2} imgOnLeft/>
       <AllProjects projects={allProjects}/>
     </TermHeadedContainer>
-    <TermHeadedContainer text="contact" startOnScroll>
+    <TermHeadedContainer text="contact" startOnScroll id="contact">
       <Contact {...contact}/>
     </TermHeadedContainer>
   </Container>
