@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useWindowResize } from "../../hooks/useWindowResize/useWindowResize";
+import { experiences } from "../websiteData";
 import { Description } from "./Description";
 import { TimelineBar } from "./TimelineBar";
 import { TimelineBody } from "./TimelineBody";
@@ -68,22 +69,8 @@ export interface TimelineControllerProps {
   mouseLeaveHandler: (index: number) => void
 }
 
-const dummyData = [
-  {start: '2020-09-01', end: '2022-05-04', title: 'Computer Science', employer: 'University of Toronto', points:
-   ['Worked in teams to test, document, and track bugs in the FIFA 21 video game'], isEducation: true},
-  {start: '2021-07-01', end: '2021-09-01', title: 'Software Intern', employer: 'Game of Apps', points:
-   ['Created a registration system using React, allowing students to register for the Game of Apps program online; eliminated admin overhead by handling student data programmatically',
-  'Integrated online payments with Braintree APIusing React, Node.js Express, and Heroku',
-  'Documented the Game of Apps website and server codebase, improving its readability',
-  'Excelled in a fast-paced environment and aided in mentoring peer interns with less experience'
-
-]},
-  {start: '2020-06-29', end: '2020-09-01', title: 'Development Support', employer: 'Electronic Arts', points:
-   ['Worked in teams to test, document, and track bugs in the FIFA 21 video game']},
-] as JobsData;
-
-const start = parseDateString(minStr(dummyData.map(x => x.start)));
-const end = parseDateString(maxStr(dummyData.map(x => x.end)));
+const start = parseDateString(minStr(experiences.map(x => x.start)));
+const end = parseDateString(maxStr(experiences.map(x => x.end)));
 
 /**
  * A component that visualizes a complete job history using a timeline
@@ -117,7 +104,7 @@ export function Timeline() {
   useWindowResize(updateYearWidth, 1000);
   useEffect(() => {updateYearWidth()}, []);
 
-  const controllerProps = { data: dummyData, selectedIndex, hoverIndex,
+  const controllerProps = { data: experiences, selectedIndex, hoverIndex,
      selectHandler, mouseLeaveHandler, hoverHandler } as TimelineControllerProps;
 
   return <Container>
@@ -127,7 +114,7 @@ export function Timeline() {
     </TimelineContainer>
     <ControllerContainer>
       {/* <Selector {...controllerProps} /> */}
-      <Description data={dummyData} hoverIndex={hoverIndex}/>
+      <Description data={experiences} hoverIndex={hoverIndex}/>
     </ControllerContainer>
   </Container>
 }

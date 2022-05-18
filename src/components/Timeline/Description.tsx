@@ -4,11 +4,12 @@ import { JobData, JobsData } from "./Timeline";
 import { getTimelineColorGroup } from "./TimelineColors";
 import "./Description.css";
 import { Colors } from "../../design-system/colors";
+import { toMthYrString } from "./util";
 
 const DescriptionContainer = styled.div`
   background-color: ${Colors.CoalBlue};
   padding: 25px;
-  height: 270px;
+  height: 250px;
   margin-left: -50px;
   z-index: 0;
 
@@ -27,10 +28,19 @@ const PointEntry = styled.li`
   font-size: 16px;
   padding: 3px;
 `;
+
 const HeaderText = styled.h2`
   margin: 0;
   font-size: 20px;
   color: white;
+`;
+
+const SubTitle = styled.h3`
+  margin: 5px 0 0 0;
+  font-size: 18px;
+  color: ${Colors.DarkGrey};
+  font-weight: 400;
+  font-style: italic;
 `;
 
 function DescriptionCard({jobData, index}: {jobData: JobData, index: number}) {
@@ -59,6 +69,7 @@ function DescriptionCard({jobData, index}: {jobData: JobData, index: number}) {
             {jobData.employer}
           </span>
         </HeaderText>
+        <SubTitle>{toMthYrString(jobData.start)} - {toMthYrString(jobData.end)}</SubTitle>
         <PointsContainer>
           {points}
         </PointsContainer>

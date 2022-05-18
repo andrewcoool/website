@@ -18,7 +18,7 @@ const ImgLink = styled.a`
 `;
 
 const ImgContainer = styled.div<{ imgUrl: string }>`
-  background: url(${(props) => props.imgUrl});
+  background: url("${(props) => props.imgUrl}");
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px;

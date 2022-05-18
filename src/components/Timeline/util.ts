@@ -52,6 +52,15 @@ export function parseDateString(dateStr: String) {
 }
 
 /**
+ * Convert a date in the format yyyy-mm-dd to "{month text} {year}"
+ */
+export function toMthYrString(dateStr: String) {
+  const [year, month_] = dateStr.split('-').map(x => parseInt(x));
+
+  return months[month_ - 1] + " " + year;
+}
+
+/**
  * A list of the 3-letter abbreviations of months with indices
  * that match with the JS Date month indices.
  */

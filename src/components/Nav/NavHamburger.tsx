@@ -41,7 +41,7 @@ const SidePanel = styled.div<{isOpen: boolean}>`
   top: 0;
   background-color: ${Colors.NearlyBlack};
   margin-right: -200px;
-  transition: margin-right 0.1s ease-in-out;
+  transition: margin-right 0.1s ease-in;
 
   ${props => props.isOpen && "margin-right: 0px;"}
 `;

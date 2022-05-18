@@ -3,7 +3,7 @@ import { Colors } from "../../design-system/colors";
 import Email from "../../icons/Email";
 import Code from "../../icons/Code";
 
-const Container = styled.div`
+const ContactInfoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -15,6 +15,7 @@ const Item = styled.div`
 
 const Link = styled.a`
   color: ${Colors.CherryPink};
+  font-weight: 400;
 `;
 
 const IconContainer = styled.div`
@@ -32,6 +33,12 @@ const Text = styled.div`
   font-weight: bold;
 `;
 
+const Description = styled.div`
+  font-size: 20px;
+  color: ${Colors.White};
+  margin-bottom: 20px;
+`;
+
 export interface ContactProps { 
   email: string,
   github: {
@@ -41,7 +48,11 @@ export interface ContactProps {
 }
 
 export function Contact({email, github}: ContactProps) {
-  return <Container>
+  return <div>
+    <Description>
+      I'm always looking for new opportunities and experiences. Feel free to reach out to me below.
+    </Description>
+    <ContactInfoContainer>
     <Item>
       <IconContainer>
         <Email />
@@ -58,5 +69,6 @@ export function Contact({email, github}: ContactProps) {
         <Link href={github.url} target="_blank">{github.name}</Link>
       </Text>
     </Item>
-  </Container>
+  </ContactInfoContainer>
+  </div>
 }

@@ -39,7 +39,7 @@ export function Website () {
     <TermHeadedContainer text="projects" startOnScroll id="projects">
       <HighlightedProject {...highlightedProject1} />
       <HighlightedProject {...highlightedProject2} imgOnLeft/>
-      <MountInView><AllProjects projects={allProjects}/></MountInView>
+      <AllProjects projects={allProjects}/>
     </TermHeadedContainer>
     <TermHeadedContainer text="contact" startOnScroll id="contact">
       <Contact {...contact}/>

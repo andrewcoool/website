@@ -40,7 +40,8 @@ export function AllProjects(props: AllProjectsProps) {
     {
       Python: false,
       React: false,
-      Typescript: false,
+      JS: false,
+      TypeScript: false,
       Java: false,
       Android: false
     } as Record<string, boolean>

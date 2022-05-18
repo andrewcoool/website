@@ -28,6 +28,7 @@ const Title = styled.h3`
 
 const Description = styled.p`
   color: ${Colors.LightGrey};
+  white-space: pre-line;
 `;
 
 const TopRow = styled.div`

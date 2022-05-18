@@ -1,13 +1,22 @@
 import styled from "styled-components"
 import { Colors } from "../../design-system/colors";
+import { ScreenSizes } from "../../design-system/screenSizes";
 import { techToJSX } from "../technologies";
 
 const Container = styled.div`
   display: flex;
   align-items: center;
+  
+  @media (max-width: ${ScreenSizes.UnderDesktop}px) {
+    width: 100%;
+  }
 `;
 
-const SubContainer = styled.div``;
+const SubContainer = styled.div`
+  @media (max-width: ${ScreenSizes.UnderDesktop}px) {
+    width: 100%;
+  }
+`;
 
 export const HighlightedText = styled.div`
   color: ${Colors.CherryPink};
@@ -27,6 +36,7 @@ const TitleText = styled.h3`
 
 const DescriptionText = styled.div`
   color: ${Colors.LightGrey};
+  white-space: pre-line;
 `;
 
 const TitleAndDescription = styled.div`
