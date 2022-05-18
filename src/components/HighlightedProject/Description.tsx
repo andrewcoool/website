@@ -92,7 +92,7 @@ export function Description(props: DescriptionProps) {
         <DescriptionText>{props.description}</DescriptionText>
       </TitleAndDescription>
       <TechList>
-        {props.technologies.map(x => <TechListItem>{techToJSX(x)}</TechListItem>)}
+        {props.technologies.map(x => <TechListItem key={x}>{techToJSX(x)}</TechListItem>)}
       </TechList>
     </SubContainer>
   </Container>
