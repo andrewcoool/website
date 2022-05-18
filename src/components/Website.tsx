@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import { Colors } from "../design-system/colors";
-import { MountInView } from "../design-system/util/MountInView";
 import { About } from "./About";
 import { AllProjects } from "./AllProjects";
 import { Contact } from "./Contact";
@@ -24,6 +22,9 @@ const Container = styled.div`
   }
 `;
 
+/**
+ * A component organizing the different sections of the website together.
+ */
 export function Website () {
   return <Container>
     <Nav />

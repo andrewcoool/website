@@ -40,13 +40,19 @@ const Description = styled.div`
 `;
 
 export interface ContactProps { 
+  /** The email address displayed */
   email: string,
   github: {
+    /** The github username displayed */
     name: string,
+    /** The url redirected to when the github username is clicked (github profile url) */
     url: string,
   }
 }
 
+/**
+ * A component displaying contact info
+ */
 export function Contact({email, github}: ContactProps) {
   return <div>
     <Description>

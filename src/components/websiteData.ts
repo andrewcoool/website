@@ -1,7 +1,7 @@
 import { ProjectCardProps } from "./AllProjects/ProjectCard";
 import { ContactProps } from "./Contact/Contact";
 import { HighlightedProjectProps } from "./HighlightedProject/HighlightedProject";
-import { JobsData } from "./Timeline/Timeline";
+import { Experiences } from "./Timeline/Timeline";
 import collaborateCodePreview from "../resources/Collaborate Code Preview.png";
 import cupetPreview from "../resources/Cupet Preview.png";
 
@@ -23,7 +23,7 @@ export const experiences = [
 ]},
   {start: '2020-09-01', end: '2022-05-04', title: 'Computer Science', employer: 'University of Toronto', points:
   ['Honours BSc Computer Science Specialist and Mathematics Minor', "GPA: 3.89/4.00. University of Toronto Scholars Award", 'Relevant Coursework: Data Structures & Algorithms, Foundations of Computer Science, Enriched Introduction to the Theory of Computation, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
-] as JobsData;
+] as Experiences;
 
 export const highlightedProject1 = {
   title: "Collaborate Code",

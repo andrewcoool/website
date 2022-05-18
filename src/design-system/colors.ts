@@ -1,3 +1,6 @@
+/**
+ * The color palette of the website
+ */
 export const Colors = {
   SkyBlue: "#37AACE",
   Wisteria: "#C490D1",

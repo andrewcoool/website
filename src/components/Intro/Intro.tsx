@@ -64,6 +64,9 @@ const ArcContainer = styled.div`
   }
 `;
 
+/**
+ * A component displaying an introduction message and animation
+ */
 export function Intro () {
   return <Container>
     <SubContainer>

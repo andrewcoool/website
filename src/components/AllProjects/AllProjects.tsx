@@ -32,9 +32,13 @@ const ProjectsContainer = styled(motion.div)`
 `;
 
 export interface AllProjectsProps {
+  /** The list of projects to display */
   projects: ProjectCardProps[];
 }
 
+/**
+ * A component displaying all personal projects as a grid of ProjectCards.
+ */
 export function AllProjects(props: AllProjectsProps) {
   const [filterData, setFilterData] = useState(
     {
@@ -69,7 +73,7 @@ export function AllProjects(props: AllProjectsProps) {
   return <Container>
     <HeaderRow>
       <Header>All Projects</Header>
-      <FilterButton toggle={toggle} filterData={filterData}/>
+      <FilterButton onToggle={toggle} filterData={filterData}/>
     </HeaderRow>
     <ProjectsContainer layout transition={{
       staggerChildren: 0.5

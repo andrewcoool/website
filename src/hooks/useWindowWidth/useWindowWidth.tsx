@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 
+/**
+ * A React hook that returns the window width.
+ * 
+ * @returns The window width.
+ */
 export function useWindowWidth() {
   const [ width, setWidth ] = useState(-1);
   

@@ -6,7 +6,7 @@ import { techToJSX } from "../technologies";
 const Container = styled.div`
   display: flex;
   align-items: center;
-  
+
   @media (max-width: ${ScreenSizes.UnderDesktop}px) {
     width: 100%;
   }
@@ -18,6 +18,9 @@ const SubContainer = styled.div`
   }
 `;
 
+/**
+ * Highlighted (pink) text used in the HighlightedProject component.
+ */
 export const HighlightedText = styled.div`
   color: ${Colors.CherryPink};
   font-size: 16px;
@@ -76,6 +79,10 @@ interface DescriptionProps {
   showHighlightedText?: boolean;
 }
 
+/**
+ * A component for storing the details (title, description, technologies)
+ * of a HighlightedProject.
+ */
 export function Description(props: DescriptionProps) {
   return <Container>
     <SubContainer>

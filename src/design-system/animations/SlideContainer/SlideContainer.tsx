@@ -3,9 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import styled from 'styled-components';
 import "./SlideContainer.css";
 
-const Container = styled.div`
-
-`;
+const Container = styled.div``;
 
 export interface SlideContainerProps extends React.HTMLAttributes<HTMLDivElement>{
   /** Whether the contents are visible. Set to true to trigger animation. */

@@ -1,6 +1,6 @@
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import styled from "styled-components"
-import { JobData, JobsData } from "./Timeline";
+import { Experience, Experiences } from "./Timeline";
 import { getTimelineColorGroup } from "./TimelineColors";
 import "./Description.css";
 import { Colors } from "../../design-system/colors";
@@ -43,13 +43,13 @@ const SubTitle = styled.h3`
   font-style: italic;
 `;
 
-function DescriptionCard({jobData, index}: {jobData: JobData, index: number}) {
+function DescriptionCard({experience, index}: {experience: Experience, index: number}) {
   const points = [];
 
-  for (let i = 0; i < jobData.points.length; i++){
+  for (let i = 0; i < experience.points.length; i++){
     points.push(
       <PointEntry key={i}>
-        {jobData.points[i]}
+        {experience.points[i]}
       </PointEntry>
     );
   }
@@ -64,12 +64,12 @@ function DescriptionCard({jobData, index}: {jobData: JobData, index: number}) {
         classNames="description-item">
       <div>
         <HeaderText>
-          {jobData.title} @ {' '}
-          <span style={{color: getTimelineColorGroup(jobData.isEducation).selected}}>
-            {jobData.employer}
+          {experience.title} @ {' '}
+          <span style={{color: getTimelineColorGroup(experience.isEducation).selected}}>
+            {experience.employer}
           </span>
         </HeaderText>
-        <SubTitle>{toMthYrString(jobData.start)} - {toMthYrString(jobData.end)}</SubTitle>
+        <SubTitle>{toMthYrString(experience.start)} - {toMthYrString(experience.end)}</SubTitle>
         <PointsContainer>
           {points}
         </PointsContainer>
@@ -80,16 +80,16 @@ function DescriptionCard({jobData, index}: {jobData: JobData, index: number}) {
 }
 
 export interface DescriptionProps {
-  /** The complete jobs data */
-  data: JobsData;
-  /** The index of the job currently or last hovered over */
+  /** The complete experience history */
+  experiences: Experiences;
+  /** The index of the experience currently or last hovered over */
   hoverIndex: number;
 }
 
 /**
  * A component for displaying in-depth information about an entry in
- * the job/school history. 
+ * the experience history.
  */
 export function Description (props: DescriptionProps) {
-  return <DescriptionCard jobData={props.data[props.hoverIndex]} index={props.hoverIndex} />
+  return <DescriptionCard experience={props.experiences[props.hoverIndex]} index={props.hoverIndex} />
 }

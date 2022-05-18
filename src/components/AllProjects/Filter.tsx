@@ -94,11 +94,16 @@ const FilterListItemText = styled.div`
 `;
 
 export interface FilterButtonProps {
+  /** The state of which filters are checked and unchecked. A value of true indicates checked. */
   filterData: Record<string, boolean>;
-  toggle: (item: string) => void;
+  /** A function called whenever a filter is toggled. */
+  onToggle: (/** The name of the filter toggled*/ item: string) => void;
 }
 
-export function FilterButton({filterData, toggle}: FilterButtonProps) {
+/**
+ * A component for a filter pop-out with checkboxes to select criteria for filtering.
+ */
+export function FilterButton({filterData, onToggle}: FilterButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const filterListItems = [];
 
@@ -111,7 +116,7 @@ export function FilterButton({filterData, toggle}: FilterButtonProps) {
             color: Colors.White,
           },
         }}
-        onClick={() => {toggle(item)}}
+        onClick={() => {onToggle(item)}}
         checked={filterData[item]}
       />
       <FilterListItemText>{techToJSX(item)}</FilterListItemText>

@@ -83,6 +83,10 @@ const GitHubContainer = styled.div`
   }
 `;
 
+/**
+ * A component for the hamburger button on the top nav bar along with its
+ * pop out side menu.
+ */
 export function NavHamburger() {
   const [isOpen, setIsOpen] = useState(false);
   const sidePanelRef = useRef<HTMLDivElement>(null);

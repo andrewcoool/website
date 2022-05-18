@@ -35,14 +35,23 @@ const ImgContainer = styled.div<{ imgUrl: string }>`
 `;
 
 export interface HighlightedProjectProps {
+  /** The title of the project */
   title: string;
+  /** A description of the project */
   description: string;
+  /** The list of technologies used in the project */
   technologies: string[];
+  /** The url redirected to when the project is clicked */
   clickUrl: string;
+  /** The image url of the project */
   imgUrl: string;
+  /** Whether or not the image should be displayed on the left (otherwise right) */
   imgOnLeft?: boolean;
 }
 
+/**
+ * A component for displaying a highlighted project.
+ */
 export function HighlightedProject(props: HighlightedProjectProps) {  
   const windowWidth = useWindowWidth();
   const smallerThanDesktop = windowWidth <= ScreenSizes.UnderDesktop;

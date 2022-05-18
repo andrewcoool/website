@@ -35,9 +35,9 @@ const ControllerContainer = styled.div`
 `;
 
 /**
- * An interface representing a single job
+ * An interface representing a single experience
  */
-export interface JobData {
+export interface Experience {
   /** The start date */
   start: string,
   /** The end date */
@@ -46,26 +46,26 @@ export interface JobData {
   title: string,
   /** The name of the employer */
   employer: string,
-  /** A list of the responsibilities done in the job */
+  /** A list of the responsibilities / things done in the experience */
   points: string[],
   /** Whether or not the experience is an education */
   isEducation?: boolean;
 } 
 
-/** A type representing a complete job history */
-export type JobsData = JobData[];
+/** A type representing a complete experience history as a list of experiences */
+export type Experiences = Experience[];
 export interface TimelineControllerProps {
-  /** The complete job history*/
-  data: JobsData,
-  /** The index of the job selected */
+  /** The complete experience history*/
+  experiences: Experiences,
+  /** The index of the experience selected */
   selectedIndex: number,
-  /** The index of the job hovered over */
+  /** The index of the experience hovered over */
   hoverIndex: number,
-  /** A handler for when a job is selected */
+  /** A handler for when a experience is selected */
   selectHandler: (index: number) => void,
-  /** A handler for when a job is hovered over */
+  /** A handler for when a experience is hovered over */
   hoverHandler: (index: number) => void,
-  /** A handler for when a mouse leaves a job */
+  /** A handler for when a mouse leaves a experience */
   mouseLeaveHandler: (index: number) => void
 }
 
@@ -73,7 +73,7 @@ const start = parseDateString(minStr(experiences.map(x => x.start)));
 const end = parseDateString(maxStr(experiences.map(x => x.end)));
 
 /**
- * A component that visualizes a complete job history using a timeline
+ * A component that visualizes a complete experience history using a timeline
  * and a description box.
  */
 export function Timeline() {
@@ -91,7 +91,7 @@ export function Timeline() {
     setHoverIndex(index);
   }
 
-  function mouseLeaveHandler(index: number) {
+  function mouseLeaveHandler() {
     setHoverIndex(selectedIndex);
   }
 
@@ -104,7 +104,7 @@ export function Timeline() {
   useWindowResize(updateYearWidth, 1000);
   useEffect(() => {updateYearWidth()}, []);
 
-  const controllerProps = { data: experiences, selectedIndex, hoverIndex,
+  const controllerProps = { experiences: experiences, selectedIndex, hoverIndex,
      selectHandler, mouseLeaveHandler, hoverHandler } as TimelineControllerProps;
 
   return <Container>
@@ -113,8 +113,7 @@ export function Timeline() {
       <TimelineBar start={start} end={end} yearWidth={yearWidth}></TimelineBar>
     </TimelineContainer>
     <ControllerContainer>
-      {/* <Selector {...controllerProps} /> */}
-      <Description data={experiences} hoverIndex={hoverIndex}/>
+      <Description experiences={experiences} hoverIndex={hoverIndex}/>
     </ControllerContainer>
   </Container>
 }

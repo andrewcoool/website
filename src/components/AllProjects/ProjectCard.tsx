@@ -81,9 +81,13 @@ const TechListItem = styled.li`
 `;
 
 export interface ProjectCardProps {
+  /** The title of the project */
   title: string,
+  /** A description of the project */
   description: string,
+  /** The url that the user should be redirected to onclick of the project */
   clickUrl: string,
+  /** A list of technologies used in the project */
   technologies: string[]
 }
 

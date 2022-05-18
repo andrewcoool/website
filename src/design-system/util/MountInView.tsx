@@ -3,6 +3,9 @@ import useOnScreen from "../../hooks/useOnScreen/useOnScreen"
 
 export interface MountInViewProps extends React.HTMLAttributes<HTMLDivElement>{}
 
+/**
+ * A component that mounts its children once it comes into view.
+ */
 export function MountInView(props: MountInViewProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useOnScreen(ref);

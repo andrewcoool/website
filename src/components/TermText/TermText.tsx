@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { start } from "repl";
 import styled from "styled-components";
 import { TermSquare } from "./TermSquare";
 

@@ -55,6 +55,9 @@ const NavItemImg = styled.a`
   }
 `;
 
+/**
+ * A component for the top nav bar.
+ */
 export function Nav() {
   const windowWidth = useWindowWidth();
 
