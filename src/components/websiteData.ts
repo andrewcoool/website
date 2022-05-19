@@ -5,8 +5,7 @@ import { Experiences } from "./Timeline/Timeline";
 import collaborateCodePreview from "../resources/Collaborate Code Preview.png";
 import cupetPreview from "../resources/Cupet Preview.png";
 
-export const aboutText = `
-I'm a second year Computer Science student entering my third year this September (2022). I've been coding for five years with a main focus on Python data analysis and Web apps. But I've also dabbled in Java, Android, and C through some personal projects listed in the sections below.
+export const aboutText = `I'm a second year Computer Science student entering my third year this September (2022). I've been coding for five years with a main focus on Python data analysis and Web apps. But I've also dabbled in Java, Android, and C through some personal projects listed in the sections below.
 
 In my free time, I enjoy playing Counter-Strike: Global Offensive and biking. Usually anything is fun as long as it's with friends :)
 `;
