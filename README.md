@@ -1,4 +1,4 @@
-# Access at [andrewqiu.me](andrewqiu.me)
+# Access at [andrewqiu.me](https://www.andrewqiu.me)
 
 This is the repository for my personal website. I created it with React and Typescript.
 
