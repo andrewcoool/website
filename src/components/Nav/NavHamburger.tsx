@@ -110,7 +110,7 @@ export function NavHamburger() {
         <Entry href="#contact">contact</Entry>
       </EntriesContainer>
       <GitHubContainer>
-        <GitHub /><a href="https://github.com/andrewcoool">@andrewcoool</a>
+        <GitHub /><a href="https://github.com/andrewq-qiu">@andrewq-qiu</a>
       </GitHubContainer>
     </SidePanel>
   </div>

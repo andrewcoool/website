@@ -5,19 +5,20 @@ import { Experiences } from "./Timeline/Timeline";
 import collaborateCodePreview from "../resources/Collaborate Code Preview.png";
 import cupetPreview from "../resources/Cupet Preview.png";
 
-export const aboutText = `I'm a second year Computer Science student entering my third year this September (2022). I've been coding for five years with a main focus on Python data analysis and Web apps. But I've also dabbled in Java, Android, and C through some personal projects listed in the sections below.
+export const aboutText = `I'm a third year Computer Science student. I've been coding for five years with a main focus on Python data analysis and Web apps. But I've also dabbled in Java, Android, and C through some personal projects listed in the sections below.
 
-In my free time, I enjoy playing Counter-Strike: Global Offensive and biking. Usually anything is fun as long as it's with friends :)
+In my free time, I enjoy playing Counter-Strike: Global Offensive, volleyball, and badminton. Usually anything is fun as long as it's with friends :)
 `;
 
 export const experiences = [
   {start: '2021-07-01', end: '2021-09-01', title: 'Software Intern', employer: 'Game of Apps', points:
-   ['Created a registration system using React, allowing students to register for the Game of Apps program online; eliminated admin overhead by handling student data programmatically',
-  'Integrated online payments with Braintree API with Node.js Express and Heroku',
-  'Documented the Game of Apps website and server codebase, improving its readability',
+   ['Developed an online registration form using React, boosting registrations by 72%',
+  'Integrated online payments with the Braintree payments platform using Node.js Express',
+  'Overhauled the documentation of the website and server codebase, improving its maintainability',
+  'Coordinated integration testing between software teams'
 ]},
   {start: '2020-06-29', end: '2020-09-01', title: 'Development Support', employer: 'Electronic Arts', points:
-  ['Worked in teams to test, document, and track bugs in the FIFA 21 video game',
+  ['Tested, documented, and tracked bugs in the FIFA 21 video game',
     'Aided in onboarding new hires'
 ]},
   {start: '2020-09-01', end: '2022-05-04', title: 'Computer Science', employer: 'University of Toronto', points:
@@ -29,31 +30,31 @@ export const highlightedProject1 = {
   description: `A collaborative text-editor that synchronizes across multiple devices. Inspired by Google Docs.
   `,
   technologies: ["Python", "JS", "Flask", "HTML & CSS"],
-  clickUrl: "https://github.com/andrewcoool/collaborate-code",
+  clickUrl: "https://github.com/andrewq-qiu/collaborate-code",
   imgUrl: collaborateCodePreview,
 } as HighlightedProjectProps;
 
 export const highlightedProject2 = {
   title: "Cupet",
-  description: "An Android app that allows pet owners to connect by matching their pets together in a Tinder-like system.",
-  technologies: ["Java", "Android", "Java Spring", "MySQL"],
-  clickUrl: "https://github.com/andrewcoool/cupet-backend",
+  description: "Social networking platform for matching pet owners. Inspired by Tinder.",
+  technologies: ["Java", "Android", "Java Spring", "SQL"],
+  clickUrl: "https://github.com/andrewq-qiu/cupet-backend",
   imgUrl: cupetPreview,
 } as HighlightedProjectProps;
 
 export const allProjects = [
   {
     title: "Rise Up Bot",
-    description: `A Discord bot for scheduling gaming sessions. Organizes the game played and time, reminding participants at the scheduled time.
+    description: `A Discord chatbot for scheduling gaming sessions. Organizes the game played and time, reminding participants at the scheduled time.
     `,
-    clickUrl: "https://github.com/andrewcoool/rise-up-bot",
+    clickUrl: "https://github.com/andrewq-qiu/rise-up-bot",
     technologies: ["Python"]
   },
   {
     title: "Spotify Song Analytics",
-    description: `An program that finds the distinguishing traits of a Spotify playlist using Graphs. Using this data, the program recommends similar songs.
+    description: `A program that finds the distinguishing traits of a Spotify playlist using Graphs. Using this data, the program recommends similar songs.
     `,
-    clickUrl: "https://github.com/andrewcoool/spotify-data-analytics",
+    clickUrl: "https://github.com/andrewq-qiu/spotify-data-analytics",
     technologies: ["Python", "Plot.ly", "PyQt5"]
   },
   {
@@ -65,19 +66,19 @@ export const allProjects = [
   {
     title: "Collaborate Code",
     description: "A collaborative text-editor that synchronizes across multiple devices. Inspired by Google Docs.",
-    clickUrl: "https://github.com/andrewcoool/collaborate-code",
+    clickUrl: "https://github.com/andrewq-qiu/collaborate-code",
     technologies: ["Python", "JS", "Flask", "HTML & CSS"]
   },
   {
     title: "Cupet",
     description: "An Android app that allows pet owners to connect by matching their pets together in a Tinder-like system.",
-    clickUrl: "https://github.com/andrewcoool/cupet-backend",
+    clickUrl: "https://github.com/andrewq-qiu/cupet-backend",
     technologies: ["Java", "Android", "Spring"]
   },
   {
     title: "Personal Website",
     description: "You're looking at it!",
-    clickUrl: "https://github.com/andrewcoool/website",
+    clickUrl: "https://github.com/andrewq-qiu/website",
     technologies: ["React", "TypeScript"]
   },
 ] as ProjectCardProps[];
@@ -85,7 +86,7 @@ export const allProjects = [
 export const contact = {
   email: "andrewq.qiu@mail.utoronto.ca",
   github: {
-    name: "@andrewcoool",
-    url: "https://github.com/andrewcoool/"
+    name: "@andrewq-qiu",
+    url: "https://github.com/andrewq-qiu"
   }
 } as ContactProps;

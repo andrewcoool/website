@@ -91,7 +91,7 @@ export function Nav() {
           <NavItem href="#projects">projects</NavItem>
           <NavItem href="#contact">contact</NavItem>
 
-          <NavItemImg href="https://github.com/andrewcoool" target="_blank">
+          <NavItemImg href="https://github.com/andrewq-qiu" target="_blank">
             <GitHub />
           </NavItemImg>
         </NavBar>
