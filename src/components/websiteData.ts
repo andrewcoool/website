@@ -22,7 +22,7 @@ export const experiences = [
     'Aided in onboarding new hires'
 ]},
   {start: '2020-09-01', end: '2022-05-04', title: 'Computer Science', employer: 'University of Toronto', points:
-  ['Honours BSc Computer Science Specialist and Mathematics Minor', "GPA: 3.89/4.00. University of Toronto Scholars Award", 'Relevant Coursework: Data Structures & Algorithms, Foundations of Computer Science, Enriched Introduction to the Theory of Computation, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
+  ['Honours BSc Computer Science Specialist and Mathematics Minor', "GPA: 3.91/4.00. University of Toronto Scholars Award", 'Relevant Coursework: Data Structures & Algorithms, Foundations of Computer Science, Enriched Introduction to the Theory of Computation, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
 ] as Experiences;
 
 export const highlightedProject1 = {
