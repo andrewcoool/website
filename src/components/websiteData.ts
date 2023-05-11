@@ -11,7 +11,8 @@ In my free time, I enjoy playing Counter-Strike: Global Offensive, volleyball, a
 `;
 
 export const experiences = [
-  {start: '2021-07-01', end: '2021-09-01', title: 'Software Intern', employer: 'Game of Apps', points:
+  {start: '2023-05-22', end: '2023-08-11', title: 'SWE Intern', employer: 'PayPal', points: ['(Experience not started yet)']},
+  {start: '2021-07-01', end: '2021-09-01', title: 'SWE Intern', employer: 'Game of Apps', points:
    ['Developed an online registration form using React, boosting registrations by 72%',
   'Integrated online payments with the Braintree payments platform using Node.js Express',
   'Overhauled the documentation of the website and server codebase, improving its maintainability',
@@ -21,8 +22,10 @@ export const experiences = [
   ['Tested, documented, and tracked bugs in the FIFA 21 video game',
     'Aided in onboarding new hires'
 ]},
-  {start: '2020-09-01', end: '2022-05-04', title: 'Computer Science', employer: 'University of Toronto', points:
-  ['Honours BSc Computer Science Specialist and Mathematics Minor', "GPA: 3.91/4.00. University of Toronto Scholars Award", 'Relevant Coursework: Data Structures & Algorithms, Foundations of Computer Science, Enriched Introduction to the Theory of Computation, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
+  {start: '2020-09-01', end: '2024-01-01', title: 'Computer Science', employer: 'University of Toronto', points:
+  ['Honours BSc Computer Science Specialist and Mathematics Minor',
+   "GPA: 3.93/4.00. University of Toronto Scholars Award",
+  'Relevant Coursework: Algo Design & Analysis, Machine Learning, Artificial Intelligence, Parallel Programming, Operating Systems, Databases, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
 ] as Experiences;
 
 export const highlightedProject1 = {
@@ -84,7 +87,7 @@ export const allProjects = [
 ] as ProjectCardProps[];
 
 export const contact = {
-  email: "andrewq.qiu@mail.utoronto.ca",
+  email: "andrewqiu9774@gmail.com",
   github: {
     name: "@andrewq-qiu",
     url: "https://github.com/andrewq-qiu"

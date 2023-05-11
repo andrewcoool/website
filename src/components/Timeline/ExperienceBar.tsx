@@ -57,10 +57,8 @@ export interface ExperienceBarProps {
  * in the Timeline.
  */
 export function ExperienceBar(props: ExperienceBarProps) {
-  const now = Date.now();
   const start = parseDateString(props.experience.start);
   let end = parseDateString(props.experience.end);
-  end = end.getTime() > now ? new Date(now) : end;
 
   const [ barWidth, setBarWidth ] = useState(0);
   const [ isWidthIncreasing, setIsWidthIncreasing ] = useState(false);

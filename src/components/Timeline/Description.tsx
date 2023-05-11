@@ -11,6 +11,7 @@ const DescriptionContainer = styled.div`
   padding: 25px;
   height: 250px;
   margin-left: -50px;
+  width: 424px;
   z-index: 0;
 
   @media (max-width: 1200px) {

@@ -21,9 +21,9 @@ const Tick = styled.div`
 const YearText = styled.div`
   color: white;
   position: absolute;
-  transform: translateX(4px) translateX(-50%) ;`
-  
-;
+  transform: translateX(4px) translateX(-50%) ;
+  text-align:center;
+`;
 
 const TickContainer = styled.div``;
 
@@ -31,12 +31,17 @@ const TicksContainer = styled.div`
   padding-left: 50px;
   padding-right: 50px;
   display: flex;
+  
+  & > *:first-child {
+    position: absolute;
+  }
 `;
 
 const BetweenTicksContainer = styled.div`
   display:flex;
   flex-grow: 1;
-  justify-content: space-between;`;
+  justify-content: space-between;
+  `;
 
 export interface TimelineBarProps {
   /** The start of the timeline */
@@ -78,7 +83,7 @@ export function TimelineBar({start, end, yearWidth}: TimelineBarProps) {
     <TicksContainer>
       {startTick}
       <BetweenTicksContainer style={{
-        paddingLeft: yearWidth * diffInYr(new Date(startYear, 12, 31), start),
+        paddingLeft: yearWidth * diffInYr(new Date(startYear, 12, 31), start) - 8,
         paddingRight: yearWidth * diffInYr(end, lastTickDate)
       }}>
         {ticks}
