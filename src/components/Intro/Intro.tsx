@@ -77,7 +77,7 @@ export function Intro () {
         my name is <Name>andrew qiu</Name>
       </Title>
       <SubText>
-        third year computer science student
+        fourth year computer science student
       </SubText>
     </SubContainer>
   </Container>

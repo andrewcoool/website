@@ -9,7 +9,7 @@ import { toMthYrString } from "./util";
 const DescriptionContainer = styled.div`
   background-color: ${Colors.CoalBlue};
   padding: 25px;
-  height: 250px;
+  height: 270px;
   margin-left: -50px;
   width: 424px;
   z-index: 0;

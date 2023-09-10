@@ -5,24 +5,30 @@ import { Experiences } from "./Timeline/Timeline";
 import collaborateCodePreview from "../resources/Collaborate Code Preview.png";
 import cupetPreview from "../resources/Cupet Preview.png";
 
-export const aboutText = `I'm a third year Computer Science student. I've been coding for five years with a main focus on Python data analysis and Web apps. But I've also dabbled in Java, Android, and C through some personal projects listed in the sections below.
+export const aboutText = `I'm a fourth year Computer Science student. I've been coding for six years with a speciality in Python, C, Java, and JavaScript/TypeScript. My main interests are in machine learning and code efficiency.
 
 In my free time, I enjoy playing Counter-Strike: Global Offensive, volleyball, and badminton. Usually anything is fun as long as it's with friends :)
 `;
 
 export const experiences = [
-  {start: '2023-05-22', end: '2023-08-11', title: 'SWE Intern', employer: 'PayPal', points: ['(Experience not started yet)']},
-  {start: '2021-07-01', end: '2021-09-01', title: 'SWE Intern', employer: 'Game of Apps', points:
-   ['Developed an online registration form using React, boosting registrations by 72%',
+  {start: '2023-09-01', end: '2023-12-31', title: 'Research Assistant', employer: 'University of Toronto', points: 
+  ['Design a machine learning classifier in PyTorch and Python to determine the source camera of a photo, by identifying and applying the intrinsic blur signatures of cameras']},
+  {start: '2023-05-22', end: '2023-08-11', title: 'SWE Intern', employer: 'PayPal', points: 
+  ['Enhanced various aspects of Hyperwallet to support cash advance funding using Java and MySQL',
+  'Supported debugging live issues in production. One such fix regarding parsing errors alleviated 500 failed transactions weekly',
+  'Collaborated in creating documentation and learning materials for the Hyperwallet codebase',
+  'Oversaw onboarding for a new developer, reducing blockage']},
+  {start: '2021-07-01', end: '2021-09-01', title: 'Web Developer Intern', employer: 'Game of Apps', points:
+  ['Developed an online registration form using React, boosting registrations by 72%',
   'Integrated online payments with the Braintree payments platform using Node.js Express',
-  'Overhauled the documentation of the website and server codebase, improving its maintainability',
+  'Overhauled the documentation of the codebase, improving its maintainability',
   'Coordinated integration testing between software teams'
 ]},
   {start: '2020-06-29', end: '2020-09-01', title: 'Development Support', employer: 'Electronic Arts', points:
   ['Tested, documented, and tracked bugs in the FIFA 21 video game',
     'Aided in onboarding new hires'
 ]},
-  {start: '2020-09-01', end: '2024-01-01', title: 'Computer Science', employer: 'University of Toronto', points:
+  {start: '2020-09-01', end: '2025-05-01', title: 'Computer Science', employer: 'University of Toronto', points:
   ['Honours BSc Computer Science Specialist and Mathematics Minor',
    "GPA: 3.93/4.00. University of Toronto Scholars Award",
   'Relevant Coursework: Algo Design & Analysis, Machine Learning, Artificial Intelligence, Parallel Programming, Operating Systems, Databases, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
