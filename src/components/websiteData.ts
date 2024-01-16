@@ -2,17 +2,20 @@ import { ProjectCardProps } from "./AllProjects/ProjectCard";
 import { ContactProps } from "./Contact/Contact";
 import { HighlightedProjectProps } from "./HighlightedProject/HighlightedProject";
 import { Experiences } from "./Timeline/Timeline";
-import collaborateCodePreview from "../resources/Collaborate Code Preview.png";
+import winProbabilitiesPreview from "../resources/CS2 Win Probabilities Preview.png";
 import cupetPreview from "../resources/Cupet Preview.png";
 
-export const aboutText = `I'm a fourth year Computer Science student. I've been coding for six years with a speciality in Python, C, Java, and JavaScript/TypeScript. My main interests are in machine learning and code efficiency.
+export const aboutText = `I'm a fourth year Computer Science student. I've been coding for six years with a speciality in Python, C/C++, Java, and JavaScript/TypeScript. My main interests are in machine learning and code efficiency.
 
-In my free time, I enjoy playing Counter-Strike: Global Offensive, volleyball, and badminton. Usually anything is fun as long as it's with friends :)
+In my free time, I enjoy playing Counter-Strike: Global Offensive, volleyball, and badminton.
 `;
 
 export const experiences = [
   {start: '2023-09-01', end: '2023-12-31', title: 'Research Assistant', employer: 'University of Toronto', points: 
-  ['Design a machine learning classifier in PyTorch and Python to determine the source camera of a photo, by identifying and applying the intrinsic blur signatures of cameras']},
+  ['Design a CNN classifier in that determines the source camera of a photo using Python and PyTorch',
+  'Apply residual connections and neural approximations of camera-specific blur functions',
+  'Conduct literature review on Source Camera Identification and Deep Learning',
+  'Evaluate and adjust various architectures from similar problems in literature']},
   {start: '2023-05-22', end: '2023-08-11', title: 'SWE Intern', employer: 'PayPal', points: 
   ['Enhanced various aspects of Hyperwallet to support cash advance funding using Java and MySQL',
   'Supported debugging live issues in production. One such fix regarding parsing errors alleviated 500 failed transactions weekly',
@@ -35,12 +38,12 @@ export const experiences = [
 ] as Experiences;
 
 export const highlightedProject1 = {
-  title: "Collaborate Code",
-  description: `A collaborative text-editor that synchronizes across multiple devices. Inspired by Google Docs.
+  title: "CS2 Win Probabilities",
+  description: `Using ML to predict CS2 round win probabilities given the current game state.
   `,
-  technologies: ["Python", "JS", "Flask", "HTML & CSS"],
-  clickUrl: "https://github.com/andrewq-qiu/collaborate-code",
-  imgUrl: collaborateCodePreview,
+  technologies: ["Python", "PyTorch"],
+  clickUrl: "https://github.com/andrewq-qiu/cs2-win-probabilities",
+  imgUrl: winProbabilitiesPreview,
 } as HighlightedProjectProps;
 
 export const highlightedProject2 = {
@@ -52,6 +55,20 @@ export const highlightedProject2 = {
 } as HighlightedProjectProps;
 
 export const allProjects = [
+  {
+    title: "CS2 White Elephant",
+    description: `A webapp implementing white elephant with CS2 items.
+    `,
+    clickUrl: "https://github.com/andrewq-qiu/cs2-white-elephant",
+    technologies: ["React", "TypeScript", "Sockets"]
+  },
+  {
+    title: "CS2 Win Probabiliies",
+    description: `Using ML to predict CS2 round win probabilities given the current game state.
+    `,
+    clickUrl: "https://github.com/andrewq-qiu/cs2-win-probabilities",
+    technologies: ["Python", "PyTorch"]
+  },
   {
     title: "Rise Up Bot",
     description: `A Discord chatbot for scheduling gaming sessions. Organizes the game played and time, reminding participants at the scheduled time.
