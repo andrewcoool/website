@@ -15,7 +15,7 @@ export const experiences = [
     ['In progress']},
   {start: '2023-09-01', end: '2024-12-31', title: 'Research', employer: 'University of Toronto', points: 
   ['(Project 1) Employ implicit neural representations of camera blur for cell phone device forensics',
-   '(Project 2)Construct deep learning reconstruction pipelines for Coded Hyperspectral Imaging',
+   '(Project 2) Construct deep learning reconstruction pipelines for Coded Hyperspectral Imaging',
    '(Project 3) Apply monocular depth estimation for human-robot locomotion on staircases',
    'Associated with Dynamic Graphics Project (DGP) Lab, Computational Health and Interaction (CHAI) Lab, Neural Robotics Lab']},
   {start: '2023-05-22', end: '2023-08-11', title: 'SWE Intern', employer: 'PayPal', points: 
@@ -35,8 +35,8 @@ export const experiences = [
 ]},
   {start: '2020-09-01', end: '2025-05-01', title: 'Computer Science', employer: 'University of Toronto', points:
   ['Honours BSc Computer Science Specialist and Mathematics Minor',
-   "GPA: 3.93/4.00. University of Toronto Scholars Award",
-  'Relevant Coursework: Algo Design & Analysis, Machine Learning, Artificial Intelligence, Parallel Programming, Operating Systems, Databases, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
+   "GPA: 3.94/4.00. University of Toronto Scholars Award",
+  'Coursework: Neural Networks, Image Understanding, NLP, Machine Learning, Artificial Intelligence, Parallel Programming, Operating Systems, Databases, Software Design, Software Tools, Multivariable Calculus, Linear Algebra, Probability and Statistics'], isEducation: true},
 ] as Experiences;
 
 export const highlightedProject1 = {
