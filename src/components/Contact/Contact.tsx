@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Colors } from "../../design-system/colors";
 import Email from "../../icons/Email";
 import Code from "../../icons/Code";
+import Linkedin from "../../icons/Linkedin";
 
 const ContactInfoContainer = styled.div`
   display: flex;
@@ -42,6 +43,12 @@ const Description = styled.div`
 export interface ContactProps { 
   /** The email address displayed */
   email: string,
+  linkedin: {
+    /** The linkedin username displayed */
+    name: string,
+    /** The url redirected to when the linkedin username is clicked (linkedin profile url) */
+    url: string,
+  }
   github: {
     /** The github username displayed */
     name: string,
@@ -53,10 +60,10 @@ export interface ContactProps {
 /**
  * A component displaying contact info
  */
-export function Contact({email, github}: ContactProps) {
+export function Contact({email, linkedin, github}: ContactProps) {
   return <div>
     <Description>
-      I'm always looking for new opportunities and experiences. Feel free to reach out to me below.
+      Reach out to me!
     </Description>
     <ContactInfoContainer>
     <Item>
@@ -66,6 +73,15 @@ export function Contact({email, github}: ContactProps) {
       <Text>
         Email: {" "}
         <Link href={"mailto:" + email}>{email}</Link>
+      </Text>
+    </Item>
+    <Item>
+      <IconContainer>
+        <Linkedin />
+      </IconContainer>
+      <Text>
+        LinkedIn: {" "}
+        <Link href={linkedin.url}>{linkedin.name}</Link>
       </Text>
     </Item>
     <Item>

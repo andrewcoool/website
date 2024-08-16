@@ -5,23 +5,25 @@ import { Experiences } from "./Timeline/Timeline";
 import winProbabilitiesPreview from "../resources/CS2 Win Probabilities Preview.png";
 import cupetPreview from "../resources/Cupet Preview.png";
 
-export const aboutText = `I'm a fourth year Computer Science student. I've been coding for six years with a speciality in Python, C/C++, Java, and JavaScript/TypeScript. My main interests are in machine learning and code efficiency.
+export const aboutText = `I'm a fourth year Computer Science student. I've been coding for seven years with a speciality in Python, C/C++, Java, and JavaScript/TypeScript. My main interests are in machine learning and code efficiency.
 
-In my free time, I enjoy playing Counter-Strike: Global Offensive, volleyball, and badminton.
+In my free time, I enjoy cooking and playing CS2, volleyball, and badminton.
 `;
 
 export const experiences = [
-  {start: '2023-09-01', end: '2023-12-31', title: 'Research Assistant', employer: 'University of Toronto', points: 
-  ['Design a CNN classifier in that determines the source camera of a photo using Python and PyTorch',
-  'Apply residual connections and neural approximations of camera-specific blur functions',
-  'Conduct literature review on Source Camera Identification and Deep Learning',
-  'Evaluate and adjust various architectures from similar problems in literature']},
+  {start: '2024-09-01', end: '2024-12-31', title: 'MLE Intern', employer: 'Pinterest', points: 
+    ['In progress']},
+  {start: '2023-09-01', end: '2024-12-31', title: 'Research', employer: 'University of Toronto', points: 
+  ['(Project 1) Employ implicit neural representations of camera blur for cell phone device forensics',
+   '(Project 2)Construct deep learning reconstruction pipelines for Coded Hyperspectral Imaging',
+   '(Project 3) Apply monocular depth estimation for human-robot locomotion on staircases',
+   'Associated with Dynamic Graphics Project (DGP) Lab, Computational Health and Interaction (CHAI) Lab, Neural Robotics Lab']},
   {start: '2023-05-22', end: '2023-08-11', title: 'SWE Intern', employer: 'PayPal', points: 
   ['Enhanced various aspects of Hyperwallet to support cash advance funding using Java and MySQL',
-  'Supported debugging live issues in production. One such fix regarding parsing errors alleviated 500 failed transactions weekly',
-  'Collaborated in creating documentation and learning materials for the Hyperwallet codebase',
-  'Oversaw onboarding for a new developer, reducing blockage']},
-  {start: '2021-07-01', end: '2021-09-01', title: 'Web Developer Intern', employer: 'Game of Apps', points:
+  'Debugged live issues in production, alleviating 500 failed transactions weekly',
+  'Refactored existing code using design patterns and OOP principles, improving maintainability',
+  'Collaborated in creating documentation and learning materials for the Hyperwallet codebase']},
+  {start: '2021-07-01', end: '2021-09-01', title: 'Web Dev Intern', employer: 'Game of Apps', points:
   ['Developed an online registration form using React, boosting registrations by 72%',
   'Integrated online payments with the Braintree payments platform using Node.js Express',
   'Overhauled the documentation of the codebase, improving its maintainability',
@@ -111,6 +113,10 @@ export const allProjects = [
 
 export const contact = {
   email: "andrewqiu9774@gmail.com",
+  linkedin: {
+    name: "@andrew-qiu",
+    url: "https://www.linkedin.com/in/andrew-qiu/"
+  },
   github: {
     name: "@andrewq-qiu",
     url: "https://github.com/andrewq-qiu"
