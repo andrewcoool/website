@@ -23,6 +23,7 @@ const Container = styled.div`
 const Title = styled.h3`
   color: white;
   margin: 0;
+  width: 80%;
   font-size: 20px;
 `;
 
