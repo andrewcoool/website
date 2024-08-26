@@ -11,7 +11,7 @@ In my free time, I enjoy cooking and playing CS2, volleyball, and badminton.
 `;
 
 export const experiences = [
-  {start: '2024-09-01', end: '2024-12-31', title: 'MLE Intern', employer: 'Pinterest', points: 
+  {start: '2024-09-01', end: '2024-12-31', title: 'ML Intern', employer: 'Pinterest', points: 
     ['In progress']},
   {start: '2023-09-01', end: '2024-12-31', title: 'Research', employer: 'University of Toronto', points: 
   ['(Project 1) Employ implicit neural representations of camera blur for cell phone device forensics',
@@ -28,10 +28,6 @@ export const experiences = [
   'Integrated online payments with the Braintree payments platform using Node.js Express',
   'Overhauled the documentation of the codebase, improving its maintainability',
   'Coordinated integration testing between software teams'
-]},
-  {start: '2020-06-29', end: '2020-09-01', title: 'Development Support', employer: 'Electronic Arts', points:
-  ['Tested, documented, and tracked bugs in the FIFA 21 video game',
-    'Aided in onboarding new hires'
 ]},
   {start: '2020-09-01', end: '2025-05-01', title: 'Computer Science', employer: 'University of Toronto', points:
   ['Honours BSc Computer Science Specialist and Mathematics Minor',
