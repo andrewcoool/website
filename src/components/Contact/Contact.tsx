@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../design-system/colors";
 import Email from "../../icons/Email";
-import Code from "../../icons/Code";
+import GitHub from "../../icons/GitHub";
 import Linkedin from "../../icons/Linkedin";
 
 const ContactInfoContainer = styled.div`
@@ -85,7 +85,7 @@ export function Contact({email, linkedin, github}: ContactProps) {
       </Text>
     </Item>
     <Item>
-      <IconContainer><Code /></IconContainer>
+      <IconContainer><GitHub /></IconContainer>
       <Text>
         GitHub: {" "}
         <Link href={github.url} target="_blank">{github.name}</Link>
